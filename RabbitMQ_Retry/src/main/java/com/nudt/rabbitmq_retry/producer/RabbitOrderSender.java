@@ -2,6 +2,7 @@ package com.nudt.rabbitmq_retry.producer;
 
 import java.util.Date;
 
+import com.nudt.rabbitmq_retry.config.RetryMessageTasker;
 import com.nudt.rabbitmq_retry.constant.Constants;
 import com.nudt.rabbitmq_retry.entity.Order;
 import com.nudt.rabbitmq_retry.mapper.BrokerMessageLogMapper;
@@ -20,6 +21,8 @@ public class RabbitOrderSender {
     @Autowired
     private BrokerMessageLogMapper brokerMessageLogMapper;
 
+    @Autowired
+    private RetryMessageTasker retryMessageTasker;
     /**
      * ACK回调函数
      */
@@ -33,6 +36,7 @@ public class RabbitOrderSender {
                 brokerMessageLogMapper.changeBrokerMessageLogStatus(messageId, Constants.ORDER_SEND_SUCCESS, new Date());
             } else {
                 //失败则进行具体的后续操作:重试 或者补偿等手段
+                retryMessageTasker.reSend();
                 System.err.println("异常处理...");
             }
         }

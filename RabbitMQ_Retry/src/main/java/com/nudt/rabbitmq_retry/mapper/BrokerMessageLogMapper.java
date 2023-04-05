@@ -36,6 +36,5 @@ public interface BrokerMessageLogMapper {
 
     void insert(BrokerMessageLog brokerMessageLog);
 
-
 }
 

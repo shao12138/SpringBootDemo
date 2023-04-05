@@ -23,7 +23,6 @@ public class RetryMessageTasker {
     @Autowired
     private BrokerMessageLogMapper brokerMessageLogMapper;
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 10000)
     public void reSend() {
         // 取出 status=0 且响应超时的消息
         List<BrokerMessageLog> list = brokerMessageLogMapper.query4StatusAndTimeoutMessage();
