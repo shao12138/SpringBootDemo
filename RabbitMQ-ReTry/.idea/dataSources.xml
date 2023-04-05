@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="demo-rabbitmq@localhost" uuid="cc57a6d9-8f1b-4e93-9150-182f94614c6b">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/demo-rabbitmq</jdbc-url>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,59 @@
+{
+  "name" : "BrokerMessageLog",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "messageId",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "message",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "tryCount",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "status",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "nextRetry",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "createTime",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "updateTime",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.tooi.demorabbitmqretry",
+  "savePath" : "./src/main/java/com/tooi/demorabbitmqretry",
+  "saveModelName" : "demo-rabbitmq-retry"
+}

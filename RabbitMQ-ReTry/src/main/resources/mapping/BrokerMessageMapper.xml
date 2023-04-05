@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tooi.demorabbitmqretry.mapper.BrokerMessageLogMapper">
+
+    <resultMap type="com.tooi.demorabbitmqretry.entity.BrokerMessageLog" id="BaseResultMap">
+        <result property="messageId" column="message_id" jdbcType="VARCHAR"/>
+        <result property="message" column="message" jdbcType="VARCHAR"/>
+        <result property="tryCount" column="try_count" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="nextRetry" column="next_retry" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="query4StatusAndTimeoutMessage" resultMap="BaseResultMap">
+      <![CDATA[
+
+              select message_id, message, try_count, status, next_retry, create_time, update_time
+                  from broker_message_log bml
+                  where status = '0'
+                  and next_retry <= sysdate()
+
+        ]]>
+    </select>
+
+    <update id="update4ReSend">
+    update broker_message_log bml
+    set bml.try_count = bml.try_count + 1,
+      bml.update_time = #{updateTime, jdbcType=TIMESTAMP}
+    where bml.message_id = #{messageId,jdbcType=VARCHAR}
+  </update>
+
+    <update id="changeBrokerMessageLogStatus">
+    update broker_message_log bml
+    set bml.status = #{status,jdbcType=VARCHAR},
+          bml.update_time = #{updateTime, jdbcType=TIMESTAMP}
+    where bml.message_id = #{messageId,jdbcType=VARCHAR}
+  </update>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="messageId" useGeneratedKeys="true">
+        INSERT INTO `demo-rabbitmq`.`broker_message_log`(`message_id`, `message`, `try_count`, `status`, `next_retry`, `create_time`, `update_time`)
+        values (#{messageId},#{message}, #{tryCount}, #{status}, #{nextRetry}, #{createTime}, #{updateTime})
+    </insert>
+</mapper>
