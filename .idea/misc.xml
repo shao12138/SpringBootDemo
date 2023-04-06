@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/RabbitMQ/pom.xml" />
         <option value="$PROJECT_DIR$/Security/pom.xml" />
         <option value="$PROJECT_DIR$/RabbitMQ_Retry/pom.xml" />
+        <option value="$PROJECT_DIR$/Scheduled/pom.xml" />
+        <option value="$PROJECT_DIR$/Scheduled2/pom.xml" />
       </list>
     </option>
   </component>
