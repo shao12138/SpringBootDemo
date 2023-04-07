@@ -1,4 +1,4 @@
-package com.nudt.security.Entity;
+package com.nudt.security.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,14 +6,14 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-// 角色权限实体类
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class RolePermisson implements Serializable {
-
+@AllArgsConstructor
+public class SysRolePermisson implements Serializable {
+    //角色
     private Long roleId;
     private String roleName;
+    //权限
     private Long permissionId;
     private String url;
 }
