@@ -9,27 +9,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="RabbitMQ" />
         <module name="Scheduled" />
+        <module name="Elasticsearch" />
         <module name="RabbitMQ_Retry" />
         <module name="RabbitMQ-Retry" />
         <module name="Redis" />
+        <module name="MyBatis" />
         <module name="Scheduled2" />
         <module name="Security" />
         <module name="RabbitMQ_Retry2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="RabbitMQ" target="11" />
       <module name="RabbitMQ-Retry" target="11" />
-      <module name="RabbitMQ_Retry" target="11" />
       <module name="RabbitMQ_Retry2" target="11" />
-      <module name="Redis" target="11" />
-      <module name="Scheduled" target="11" />
-      <module name="Scheduled2" target="11" />
-      <module name="Security" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Elasticsearch" options="-parameters" />
       <module name="RabbitMQ" options="-parameters" />
       <module name="RabbitMQ_Retry" options="-parameters" />
       <module name="RabbitMQ_Retry2" options="-parameters" />
