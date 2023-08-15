@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/Scheduled2/pom.xml" />
         <option value="$PROJECT_DIR$/Elasticsearch/pom.xml" />
         <option value="$PROJECT_DIR$/MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/H2DB/pom.xml" />
       </list>
     </option>
   </component>
